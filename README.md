@@ -16,7 +16,7 @@ Demonstrator bell-nozzle rocket engine
 
 ## [Legacy](Legacy)
 
-
+Defunct code, calculations, etc.
 
 ## [Calculations](Calculations/Calculations.md)
 
