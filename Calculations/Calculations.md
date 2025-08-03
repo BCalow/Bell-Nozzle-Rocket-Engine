@@ -37,6 +37,4 @@ $P_s = P_1(1+\frac{\gamma-1}{2}M_1^2)^\frac{\gamma}{\gamma-1}$
 
 ### Area Ratio From Pressure <sup>[[3]](/Github/Bell-Nozzle-Rocket-Engine/Sources/Sources.md)</sup>
 
-```math
-\epsilon = \frac{(\frac{2}{\gamma+1})^\frac{1}{\gamma-1}(\frac{P_c}{P_e})^\frac{1}{\gamma}}{\sqrt{\frac{\gamma+1}{\gamma-1}(1-(\frac{P_e}{P_c})^\frac{\gamma-1}{\gamma})}}
-```
+$\epsilon = \frac{(\frac{2}{\gamma+1})^\frac{1}{\gamma-1}(\frac{P_c}{P_e})^\frac{1}{\gamma}}{\sqrt{\frac{\gamma+1}{\gamma-1}(1-(\frac{P_e}{P_c})^\frac{\gamma-1}{\gamma})}}$
