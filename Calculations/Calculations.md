@@ -9,7 +9,6 @@
 ## Nomenclature
 <html>
 <head>
-<style> table, th, td {border: 1px solid white; border-collapse: collapse; text-align:center;} </style>
 </head>
 
 <body>
