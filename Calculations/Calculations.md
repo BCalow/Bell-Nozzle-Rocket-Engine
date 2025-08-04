@@ -40,7 +40,7 @@ Subscripts
 
 ### Heat Ratio of a Multi-Compound Gas <sup>[[1]](/Github/Bell-Nozzle-Rocket-Engine/Sources/Sources.md)</sup>
 
-$\frac{1}{\gamma-1} = \displaystyle\sum_{} \frac{mol\%_i}{\gamma_i-1}$
+$\frac{1}{\gamma-1} = \displaystyle\sum_{} \frac{mol%_i}{\gamma_i-1}$
 
 ### Stagnation Pressure <sup>[[2]](/Github/Bell-Nozzle-Rocket-Engine/Sources/Sources.md)</sup>
 
