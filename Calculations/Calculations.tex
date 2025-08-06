@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{tcolorbox}
 \usepackage{multicol}
 \usepackage{inconsolata}
 \renewcommand*\familydefault{\ttdefault}
@@ -20,12 +21,19 @@
 
 \pagebreak
 
-\noindent
-\begin{minipage}{\linewidth}
-    \begin{multicols}{2}
-        
-    \end{multicols}
-\end{minipage}
+\begingroup
+\begin{center}
+    \fbox{
+        \begin{tabular}{ll}
+            \multicolumn{2}{l}{\textbf{Nomenclature}}\\
+            \\
+            $P$ & \qquad Pressure\\
+            $T$ & \qquad Temperature\\
+            
+        \end{tabular}
+    }
+\end{center}
+\endgroup
 
 \pagebreak
 
@@ -34,16 +42,3 @@
 Documentation of calculations for a bell nozzle rocket engine
 
 \end{document}
-
-
-
-%\begin{table}[h!]
-%    \begin{center}
-%        \begin{tabular}{|cccc|}
-%            \hline
-%            \multicolumn{4}{|l|}{\textbf{Nomenclature}}\\
-%            $P$ & Pressure\\
-%            \hline
-%        \end{tabular}
-%    \end{center}
-%\end{table}
