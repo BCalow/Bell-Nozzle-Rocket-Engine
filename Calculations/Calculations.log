@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.6)  6 AUG 2025 12:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.6)  6 AUG 2025 13:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -78,32 +78,47 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 11.
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 14.4pt on input line 13.
-LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 14.4pt on input line 13.
 
 
 [1
 
-{C:/Users/ben/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ben/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-0.enc}] (Calculations.aux)
+
+{C:/Users/ben/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ben/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 14.4pt on input line 18.
+LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
+(Font)              scaled to size 14.4pt on input line 18.
+ (Calculations.toc
+LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
+(Font)              scaled to size 10.0pt on input line 1.
+)
+\tf@toc=\write3
+\openout3 = `Calculations.toc'.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 28.
+
+
+[1] (Calculations.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1065 strings out of 468148
- 18121 string characters out of 5432030
- 428008 words of memory out of 5000000
- 29705 multiletter control sequences out of 15000+600000
- 631106 words of font info for 54 fonts, out of 8000000 for 9000
+ 1077 strings out of 468148
+ 18423 string characters out of 5432030
+ 430008 words of memory out of 5000000
+ 29714 multiletter control sequences out of 15000+600000
+ 631419 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,6n,53p,299b,199s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/ben/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><C:/Users/ben/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb>
-Output written on Calculations.pdf (1 page, 31454 bytes).
+ 45i,9n,53p,299b,279s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/ben/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><C:/Users/ben/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/ben/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+Output written on Calculations.pdf (2 pages, 46345 bytes).
 PDF statistics:
- 17 PDF objects out of 1000 (max. 8388607)
+ 25 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
