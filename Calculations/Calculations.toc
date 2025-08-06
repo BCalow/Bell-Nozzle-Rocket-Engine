@@ -1,5 +1,7 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{}%
 \contentsline {section}{\numberline {2}Calculations}{4}{}%
 \contentsline {subsection}{\numberline {2.1}Gasses}{4}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Propellant Stoichiometry}{4}{}%
-\contentsline {subsubsection}{\numberline {2.1.2}Ratio of Specific Heats of a Multi-Compound Gas}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Propellant}{4}{}%
+\contentsline {paragraph}{\numberline {2.1.1.1}Propellant Stoichiometry}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Exhaust}{4}{}%
+\contentsline {paragraph}{\numberline {2.1.2.1}Ratio of Specific Heats of a Multi-Compound Gas}{4}{}%
