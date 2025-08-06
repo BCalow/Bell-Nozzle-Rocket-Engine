@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{multicol}
 \usepackage{inconsolata}
 \renewcommand*\familydefault{\ttdefault}
 \usepackage[T1]{fontenc}
@@ -17,23 +18,32 @@
 
 \tableofcontents
 
+\pagebreak
+
+\noindent
+\begin{minipage}{\linewidth}
+    \begin{multicols}{2}
+        
+    \end{multicols}
+\end{minipage}
+
+\pagebreak
+
 \section{Introduction}
 
-Documentation of calculations for the bell nozzle rocket engine
-
-\section{Nomenclature}
-
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{|l|c|c|}
-            \hline
-            \textbf{Symbol} & \textbf{Unit} & \textbf{Description}\\
-            \hline
-            $\gamma$ & - & Ratio of specific heats\\
-            \hline
-        \end{tabular}
-        \caption{Nomenclature}
-    \end{center}
-\end{table}
+Documentation of calculations for a bell nozzle rocket engine
 
 \end{document}
+
+
+
+%\begin{table}[h!]
+%    \begin{center}
+%        \begin{tabular}{|cccc|}
+%            \hline
+%            \multicolumn{4}{|l|}{\textbf{Nomenclature}}\\
+%            $P$ & Pressure\\
+%            \hline
+%        \end{tabular}
+%    \end{center}
+%\end{table}
