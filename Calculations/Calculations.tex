@@ -2,10 +2,10 @@
 
 \usepackage{titletoc}
 \usepackage{multicol}
-\usepackage{inconsolata}
+\usepackage{url}
+\usepackage{lmodern}
 \renewcommand*\familydefault{\ttdefault}
 \usepackage[T1]{fontenc}
-\usepackage[style=ieee]{biblatex}
 
 \setcounter{secnumdepth}{4}
 
@@ -78,7 +78,7 @@ $\frac{1}{\gamma-1}=\sum\frac{mol\%}{\gamma_i-1}$
 
 \subsection{Stagnation Pressure}
 
-
+$P_s=P_1(1+(\frac{\gamma-1}{2}))$
 
 \subsection{Stagnation Temperature}
 
@@ -92,12 +92,13 @@ $\frac{1}{\gamma-1}=\sum\frac{mol\%}{\gamma_i-1}$
 \pagebreak
 \section{Nozzle Geometry}
 
-
+\cite{lanzi2022}
 
 \pagebreak
 \section*{Bibliography}
 \addcontentsline{toc}{section}{Bibliography}
-
+\bibliographystyle{plain}
+\bibliography{references}
 
 
 \end{document}
