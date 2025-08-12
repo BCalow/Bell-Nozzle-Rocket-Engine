@@ -3,6 +3,7 @@
 \usepackage{titletoc}
 \usepackage{multicol}
 \usepackage{url}
+\usepackage{amsmath}
 \usepackage{lmodern}
 \renewcommand*\familydefault{\ttdefault}
 \usepackage[T1]{fontenc}
@@ -76,15 +77,15 @@ Documentation of calculations for a bell nozzle rocket engine
 
 \subsection[Ratio of Specific Heats]{Ratio of Specific Heats of Multi-Compound \hfill \cite{lanzi2022} \\ Gas Mixtures}
 
-$$\frac{1}{\gamma-1}=\sum\frac{mol\%}{\gamma_i-1}$$
+\begin{equation}\frac{1}{\gamma-1}=\sum\frac{mol\%}{\gamma_i-1} \tag{2.1}\label{eq:2.1} \end{equation}
 
 \subsection[Stagnation Pressure]{Stagnation Pressure of Exhaust Gasses \hfill \cite{Vasishta2016}}
 
-$$P_s=P_1\left(1+\left(\frac{\gamma-1}{2}\right)Ma_1^2\right)^\frac{\gamma}{\gamma-1}$$
+\begin{equation}P_s=P_1\left(1+\left(\frac{\gamma-1}{2}\right)Ma_1^2\right)^\frac{\gamma}{\gamma-1} \tag{2.2}\label{eq:2.2} \end{equation}
 
 \subsection[Stagnation Temperature]{Stagnation Temperature of Exhaust Gasses \hfill \cite{Vasishta2018}}
 
-$$T_s=T_c\left(1+\left(\frac{\gamma-1}{2}\right)Ma_1^2\right)$$
+\begin{equation}T_s=T_c\left(1+\left(\frac{\gamma-1}{2}\right)Ma_1^2\right) \tag{2.3}\label{eq:2.3} \end{equation}
 
 \pagebreak
 \section{Combustion Chamber Geometry}
