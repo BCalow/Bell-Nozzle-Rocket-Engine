@@ -6,6 +6,8 @@
 \usepackage{lmodern}
 \renewcommand*\familydefault{\ttdefault}
 \usepackage[T1]{fontenc}
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\raggedright}{}{}
 
 \setcounter{secnumdepth}{4}
 
@@ -72,13 +74,13 @@ Documentation of calculations for a bell nozzle rocket engine
 \pagebreak
 \section{Exhaust Gasses}
 
-\subsection{Ratio of Specific Heats of a Multi-Compound Gas}
+\subsection[Ratio of Specific Heats]{Ratio of Specific Heats of a Multi-Compound \hfill \cite{lanzi2022} \\ Gas Mixtures}
 
 $\frac{1}{\gamma-1}=\sum\frac{mol\%}{\gamma_i-1}$
 
-\subsection{Stagnation Pressure}
+\subsection[Stagnation Pressure]{Stagnation Pressure of Exhast Gasses}
 
-$P_s=P_1(1+(\frac{\gamma-1}{2}))$
+$P_s=P_1(1+(\frac{\gamma-1}{2})Ma_1^2)^\frac{\gamma}{\gamma-1}$
 
 \subsection{Stagnation Temperature}
 
@@ -97,7 +99,7 @@ $P_s=P_1(1+(\frac{\gamma-1}{2}))$
 \pagebreak
 \section*{Bibliography}
 \addcontentsline{toc}{section}{Bibliography}
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \bibliography{references}
 
 
