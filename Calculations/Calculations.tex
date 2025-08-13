@@ -57,6 +57,7 @@
             $_e$ & \qquad Exit\\
             $_s$ & \qquad Stagnation\\
             $_t$ & \qquad Throat\\
+            $_x$ & \qquad Current Position\\
         \end{tabular}
     }
 \end{center}
@@ -78,7 +79,7 @@ Documentation of calculations for a bell nozzle rocket engine
 
 \subsection[Mass Flow Rate]{Mass Flow Rate}
 
-\eqcite{\dot{m}=\frac{m}{t}}{1.2}{glenn2024}
+\eqcite{\dot{m}=\frac{m}{t}}{1.2}{glenn2024mass}
 
 \pagebreak
 \section{Exhaust Gasses}
@@ -101,7 +102,15 @@ Documentation of calculations for a bell nozzle rocket engine
 
 \subsection[Exhaust Gas Density]{Exhaust Gas Density}
 
-\eqcite{\rho_t = \frac{P_t}{R_s T_t}}{2.5}{brady2020}
+\eqcite{\rho_x = \frac{P_x}{R_s T_x}}{2.5}{brady2020}
+
+\subsection[Exhaust Gas Mach Number]{Exhaust Gas Mach Number}
+
+\eqcite{Ma_e = \frac{\sqrt{2} \sqrt{P_s\sqrt[\gamma]{\frac{P_e}{P_s}}-P_e}}{\sqrt{P_e \gamma - P_e}}}{2.6}{brady2020}
+
+\subsection{Isentropic Flow Pressure-Mach Relation}
+
+\eqcite{P_x = P_s \left( 1 + \frac{\left(\gamma-1\right)}{2}Ma_x^2\right)^{-\frac{\gamma}{\gamma-1}}}{2.7}{brady2020}
 
 \pagebreak
 \section{Wall Geometry}
@@ -112,16 +121,33 @@ Documentation of calculations for a bell nozzle rocket engine
 
 \subsection{Throat Geometry}
 
-\subsubsection[Nozzle Area Ratio]{Nozzle Area Ratio \hfill}
+\subsubsection[Nozzle Area Ratio]{Nozzle Area Ratio}
 
+\eqcite{\epsilon = \frac{\left(\frac{2}{\gamma+1}\right)^\frac{1}{\gamma-1}\left(\frac{P_c}{P_e}\right)^\frac{1}{\gamma}}{\sqrt{\frac{\gamma+1}{\gamma-1}\left(1-\left(\frac{P_e}{P_c}\right)^\frac{\gamma-1}{\gamma}\right)}}}{3.2.1a}{ramamurthi2012}
 
-\eqcite{\epsilon = \frac{\left(\frac{2}{\gamma+1}\right)^\frac{1}{\gamma-1}\left(\frac{P_c}{P_e}\right)^\frac{1}{\gamma}}{\sqrt{\frac{\gamma+1}{\gamma-1}\left(1-\left(\frac{P_e}{P_c}\right)^\frac{\gamma-1}{\gamma}\right)}}}{3.2.1}{ramamurthi2012}
+\eqcite{\epsilon = \frac{A_e}{A_t}}{3.2.1b}{brady2020}
+
+\begin{equation}
+    \epsilon = \left(\frac{\gamma+1}{2}\right)^{-\frac{\gamma+1}{2\left(\gamma-1\right)}}\left(\frac{\left(1+\frac{\gamma-1}{2}Ma_t^2\right)}{Ma_t}\right)
+\end{equation}
+
 
 \subsubsection[Throat Area]{Throat Area}
 
-\eqcite{A_t = \dot{m} \frac{\sqrt{T_c}}{P_c} \sqrt{\frac{R}{\gamma}} \left(\frac{\gamma+1}{2}\right)^\frac{\gamma+1}{2\left(\gamma-1\right)}}{3.2.2a}{glenn2021}
+\eqcite{A_t = \dot{m} \frac{\sqrt{T_c}}{P_c} \sqrt{\frac{R}{\gamma}} \left(\frac{\gamma+1}{2}\right)^\frac{\gamma+1}{2\left(\gamma-1\right)}}{3.2.2a}{glenn2021thrust}
 
 \eqcite{A_t = \frac{\dot{m}}{\rho_t V_t}}{3.2.2b}{brady2020}
+
+\subsubsection{Throat Temperature}
+
+\eqcite{T_t = T_s \left( 1 + \frac{\left(\gamma-1\right)}{2} Ma_t^2\right)^{-1}}{3.2.3}{brady2020}
+
+\subsubsection{Throat Pressure}
+
+\eqcite{P_t = P_s \left( 1 + \frac{\left(\gamma-1\right)}{2}Ma_t^2\right)^{-\frac{\gamma}{\gamma-1}}}{3.2.4}{brady2020}
+
+\subsubsection{Throat }
+
 \subsection{Nozzle Geometry}
 
 
