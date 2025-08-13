@@ -10,6 +10,8 @@
 \usepackage{etoolbox}
 \apptocmd{\thebibliography}{\raggedright}{}{}
 
+\newcommand{\eqcite}[3]{\begin{equation}#1\tag*{\text{\cite{#3}~(#2)}}\end{equation}}
+
 \setcounter{secnumdepth}{4}
 
 \title{Bell Nozzle Rocket Engine Calculations}
@@ -42,6 +44,7 @@
             $mol\%$ & \qquad Mole percentage\\
             $P$ & \qquad Pressure\\
             $R$ & \qquad Gas constant\\
+            $R_s$ & \qquad Specific gas constant\\
             $T$ & \qquad Temperature\\
             $v$ & \qquad Velocity\\
             $\epsilon$ & \qquad Nozzle area ratio\\
@@ -69,28 +72,36 @@ Documentation of calculations for a bell nozzle rocket engine
 \pagebreak
 \section{Propellant}
 
-\subsection[Propellant Stoichiometry]{Propellant Stoichiometry of Hydrocarbon- \hfill \cite{hawley2014} \\ Oxygen Fuel Mixes}
+\subsection[Propellant Stoichiometry]{Propellant Stoichiometry of Hydrocarbon-Oxygen \\ Fuel Mixes}
 
-\begin{equation}C_n H_{2n+2} + \frac{3n+1}{2} O_2 \rightarrow \left(n+1\right) H_2O + n CO_2 + energy \tag{1.1}\label{eq:1.1} \end{equation}
+\eqcite{C_n H_{2n+2} + \frac{3n+1}{2} O_2 \rightarrow \left(n+1\right) H_2O + n CO_2 + energy}{1.1}{hawley2014}
 
-\subsection[Mass Flow Rate]{Mass Flow Rate \hfill \cite{glenn2024}}
+\subsection[Mass Flow Rate]{Mass Flow Rate}
 
-\begin{equation}\dot{m}=\frac{m}{t} \tag{1.2}\label{eq:1.2} \end{equation}
+\eqcite{\dot{m}=\frac{m}{t}}{1.2}{glenn2024}
 
 \pagebreak
 \section{Exhaust Gasses}
 
-\subsection[Ratio of Specific Heats]{Ratio of Specific Heats of Multi-Compound \hfill \cite{lanzi2022} \\ Gas Mixtures}
+\subsection[Ratio of Specific Heats]{Ratio of Specific Heats of Multi-Compound \\Gas Mixtures}
 
-\begin{equation}\frac{1}{\gamma-1}=\sum\frac{mol\%}{\gamma_i-1} \tag{2.1}\label{eq:2.1} \end{equation}
+\eqcite{\frac{1}{\gamma-1}=\sum\frac{mol\%}{\gamma_i-1}}{2.1}{lanzi2022}
 
-\subsection[Stagnation Pressure]{Stagnation Pressure of Exhaust Gasses \hfill \cite{vasishta2016}}
+\subsection[Stagnation Pressure]{Stagnation Pressure of Exhaust Gasses}
 
-\begin{equation}P_s=P_1\left(1+\left(\frac{\gamma-1}{2}\right)Ma_1^2\right)^\frac{\gamma}{\gamma-1} \tag{2.2}\label{eq:2.2} \end{equation}
+\eqcite{P_s=P_1\left(1+\left(\frac{\gamma-1}{2}\right)Ma_1^2\right)^\frac{\gamma}{\gamma-1}}{2.2}{vasishta2016}
 
-\subsection[Stagnation Temperature]{Stagnation Temperature of Exhaust Gasses \hfill \cite{vasishta2018}}
+\subsection[Stagnation Temperature]{Stagnation Temperature of Exhaust Gasses}
 
-\begin{equation}T_s=T_c\left(1+\left(\frac{\gamma-1}{2}\right)Ma_1^2\right) \tag{2.3}\label{eq:2.3} \end{equation}
+\eqcite{T_s=T_c\left(1+\left(\frac{\gamma-1}{2}\right)Ma_1^2\right)}{2.3}{vasishta2018}
+
+\subsection[Exit Velocity]{Gas Exit Velocity}
+
+\eqcite{V_e = \sqrt{\frac{2\gamma}{\gamma-1} R T_c \left(1-\left(\frac{P_e}{P_c}\right)^\frac{\gamma-1}{\gamma}\right)}}{2.4}{ramamurthi2012}
+
+\subsection[Exhaust Gas Density]{Exhaust Gas Density}
+
+\eqcite{\rho_t = \frac{P_t}{R_s T_t}}{2.5}{brady2020}
 
 \pagebreak
 \section{Wall Geometry}
@@ -101,14 +112,16 @@ Documentation of calculations for a bell nozzle rocket engine
 
 \subsection{Throat Geometry}
 
-\subsubsection[Nozzle Area Ratio]{Nozzle Area Ratio \hfill \cite{ramamurthi2012}}
+\subsubsection[Nozzle Area Ratio]{Nozzle Area Ratio \hfill}
 
-\begin{equation}\epsilon = \frac{\left(\frac{2}{\gamma+1}\right)^\frac{1}{\gamma-1}\left(\frac{P_c}{P_e}\right)^\frac{1}{\gamma}}{\sqrt{\frac{\gamma+1}{\gamma-1}\left(1-\left(\frac{P_e}{P_c}\right)^\frac{\gamma-1}{\gamma}\right)}} \tag{3.2.1}\label{eq:3.2.1} \end{equation}
 
-\subsubsection[Throat Area]{Throat Area \hfill \cite{glenn2021}}
+\eqcite{\epsilon = \frac{\left(\frac{2}{\gamma+1}\right)^\frac{1}{\gamma-1}\left(\frac{P_c}{P_e}\right)^\frac{1}{\gamma}}{\sqrt{\frac{\gamma+1}{\gamma-1}\left(1-\left(\frac{P_e}{P_c}\right)^\frac{\gamma-1}{\gamma}\right)}}}{3.2.1}{ramamurthi2012}
 
-\begin{equation}A_t = \dot{m} \frac{\sqrt{T_c}}{P_c} \sqrt{\frac{R}{\gamma}} \left(\frac{\gamma+1}{2}\right)^\frac{\gamma+1}{2\left(\gamma-1\right)} \end{equation}
+\subsubsection[Throat Area]{Throat Area}
 
+\eqcite{A_t = \dot{m} \frac{\sqrt{T_c}}{P_c} \sqrt{\frac{R}{\gamma}} \left(\frac{\gamma+1}{2}\right)^\frac{\gamma+1}{2\left(\gamma-1\right)}}{3.2.2a}{glenn2021}
+
+\eqcite{A_t = \frac{\dot{m}}{\rho_t V_t}}{3.2.2b}{brady2020}
 \subsection{Nozzle Geometry}
 
 
