@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{lmodern}
+\usepackage[hyphens]{url}
 \renewcommand*\familydefault{\ttdefault}
 \usepackage[T1]{fontenc}
 
@@ -18,36 +19,67 @@
     C_n H_{2n+2} + \frac{3n + 1}{2} O_2 \Longrightarrow \left(n + 1\right) H_2 O + n C O_2 + energy
 \end{equation}
 
+Propellant Stoichiometry of Hydrocarbon-Oxygen Propellant \cite{fuelmixes}
+
 \begin{equation}
     \dot{m} = \frac{m}{t}
 \end{equation}
+
+Mass Flow Rate  
 
 \begin{equation}
     \frac{1}{\gamma - 1} = \sum \frac{mol\%}{\gamma_i - 1}
 \end{equation}
 
+Heat Capacity Ratio of a Multi-Compound Gas \cite{heatratio}
+
 \begin{equation}
-    \frac{P_x}{P_s} = \left(1 + \frac{\gamma - 1}{2} Ma_x ^ 2\right) ^ {-\frac{\gamma}{\gamma - 1}}
+    \frac{P}{P_s} = \left(1 + \frac{\gamma - 1}{2} Ma ^ 2\right) ^ {-\frac{\gamma}{\gamma - 1}}
+\end{equation}
+
+Isentropic Pressure Relation \cite{compressibleflow}
+
+\begin{equation}
+    \frac{T}{T_s} = \left(1 + \frac{\gamma - 1}{2} Ma ^ 2\right) ^ {-1}
+\end{equation}
+
+Isentropic Temperature Relation \cite{compressibleflow}
+
+\begin{equation}
+    \frac{\rho}{\rho_s} = \left(1 + \frac{\gamma - 1}{2} Ma ^ 2\right) ^ {-\frac{1}{\gamma - 1}}
+\end{equation}
+
+Isentropic Density Relation \cite{compressibleflow}
+
+\begin{equation}
+    R_s = \frac{P}{\rho T}
 \end{equation}
 
 \begin{equation}
-    \frac{T_x}{T_s} = \left(1 + \frac{\gamma - 1}{2} Ma_x ^ 2\right) ^ {-1}
+    Ma = \frac{v}{c}
 \end{equation}
 
 \begin{equation}
-    \frac{\rho_x}{\rho_s} = \left(1 + \frac{\gamma - 1}{2} Ma_x ^ 2\right) ^ {-\frac{1}{\gamma - 1}}
+    c = \sqrt{\gamma \frac{P}{\rho}} = \sqrt{\gamma R T}
 \end{equation}
 
 \begin{equation}
-    V_e = \sqrt{\frac{2 \gamma}{\gamma - 1} R_s T_c \left(1 - \left(\frac{P_e}{P_c}\right) ^ {\frac{\gamma - 1}{\gamma}}\right)}
+    q = \frac{1}{2} \rho v ^ 2 = \frac{\gamma}{2} P Ma ^ 2
 \end{equation}
 
 \begin{equation}
-    R_s = \frac{P_x}{\rho_x T_x}
+    \epsilon = \left(\frac{\gamma + 1}{2}\right) ^ {\frac{\gamma + 1}{2 \left(\gamma -1\right)}} Ma_e \left(1 + \frac{\gamma - 1}{2} Ma_e ^ 2\right) ^ {- \frac{\gamma + 1}{2 \left(\gamma - 1\right)}}
 \end{equation}
+
+Area Ratio \cite{compressibleflow}
+
+\begin{equation}
+    P_c = \frac{\dot{m}\sqrt{T_t}}{A_t} \sqrt{\frac{R_s}{\gamma}} \left(\frac{\gamma + 1}{2}\right) ^ {\frac{\gamma + 1}{2\left(\gamma - 1\right)}}
+\end{equation}
+
+Dynamic Pressure \cite{thrustsummary}
 
 \pagebreak
-\cite{test}
 \bibliographystyle{ieeetr}
 \bibliography{references}
 \end{document}
