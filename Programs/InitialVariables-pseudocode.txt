@@ -1,3 +1,18 @@
+Input Parameters:
+    Available Propellent Mass
+    Burn Time
+    Exit Area
+    Gamma
+    Molar Mass
+    Chamber Temperature
 
-
-
+Output Parameters:
+    Chamber Temperature/Pressure/Density
+    Throat Temperature/Pressure/Density
+    Exit Temperature/Pressure/Density
+    Stagnation Temperature/Pressure/Density
+    Mass Flow Rate
+    Exit Mach Number
+    Exit Velocity
+    Area Ratio
+    Throat Area
