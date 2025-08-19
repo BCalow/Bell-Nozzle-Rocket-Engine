@@ -52,20 +52,28 @@ Isentropic Temperature Relation \cite{compressibleflow}
 Isentropic Density Relation \cite{compressibleflow}
 
 \begin{equation}
-    R_s = \frac{P}{\rho T}
+    P = \rho R_s T
 \end{equation}
+
+Ideal Gas Law
 
 \begin{equation}
     Ma = \frac{v}{c}
 \end{equation}
 
+Mach Velocity \cite{compressibleflow}
+
 \begin{equation}
-    c = \sqrt{\gamma \frac{P}{\rho}} = \sqrt{\gamma R T}
+    c = \sqrt{\gamma \frac{P}{\rho}} = \sqrt{\gamma R_s T}
 \end{equation}
+
+Speed of Sound \cite{compressibleflow}
 
 \begin{equation}
     q = \frac{1}{2} \rho v ^ 2 = \frac{\gamma}{2} P Ma ^ 2
 \end{equation}
+
+Dynamic Pressure \cite{compressibleflow}
 
 \begin{equation}
     \epsilon = \left(\frac{\gamma + 1}{2}\right) ^ {\frac{\gamma + 1}{2 \left(\gamma -1\right)}} Ma_e \left(1 + \frac{\gamma - 1}{2} Ma_e ^ 2\right) ^ {- \frac{\gamma + 1}{2 \left(\gamma - 1\right)}}
@@ -77,7 +85,19 @@ Area Ratio \cite{compressibleflow}
     P_c = \frac{\dot{m}\sqrt{T_t}}{A_t} \sqrt{\frac{R_s}{\gamma}} \left(\frac{\gamma + 1}{2}\right) ^ {\frac{\gamma + 1}{2\left(\gamma - 1\right)}}
 \end{equation}
 
-Dynamic Pressure \cite{thrustsummary}
+Chamber Pressure \cite{thrustsummary}
+
+\begin{equation}
+    A_t = \frac{\dot{m}}{\rho_t v_t}
+\end{equation}
+
+Throat Area \cite{cryorocket}
+
+\begin{equation}
+    0 = \frac{Ma_t}{Ma_e}\left(\frac{1 + \left(\frac{\gamma - 1}{2} Ma_e ^ 2\right)}{1 + \left(\frac{\gamma - 1}{2} Ma_t ^ 2\right)}\right) ^ {\frac{\gamma + 1}{2 \left(\gamma - 1\right)}} - \epsilon
+\end{equation}
+
+Isentropic Gas Relations \cite{gasdynamics} 
 
 \pagebreak
 \bibliographystyle{ieeetr}
