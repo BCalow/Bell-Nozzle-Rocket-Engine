@@ -19,13 +19,15 @@ P_a = 15        #Ambient Pressure               (Pa)
 
 
 #Preliminary Calculations
-R_s = 8.31446261815324 / M  #Specific Gas Constant
+R_s = 8.31446261815324 / M                  #Specific Gas Constant
 
-mdot = m_p / dt             #Mass Flow Rate
+mdot = m_p / dt                             #Mass Flow Rate
 
-T_s = T_c                   #Stagnation Temperature
+T_s = T_c                                   #Stagnation Temperature
 
-P_e = P_a                   #Exit Pressure
+P_e = P_a                                   #Exit Pressure
+
+T_t = T_s * (1 + ((gamma - 1) / 2)) ** -1   #Throat Temperature
 
 
 
@@ -33,35 +35,31 @@ P_e = P_a                   #Exit Pressure
 epsilon = 5            #Area Ratio Initial Guess
 P_c = 700              #Chamber Pressure Initial Guess     (Pa)
 A_t = 0.0008836        #Exit Area Initial Guess            (m^2)
-recursiveCalculationsVars = [epsilon, P_c, A_t]
+rCalcsVars = [epsilon, P_c, A_t]
 
 #least_squares bounds
 #Variable     low <= x <= high
 epsilonBounds   = [1, 15]
 P_cBounds       = [P_e, 1000]
 A_tBounds       = [A_e / 15, A_e]
-recursiveCalculationsVarsBounds = ([epsilonBounds[0], P_cBounds[0], A_tBounds[0]], [epsilonBounds[1], P_cBounds[1], A_tBounds[1]])
+rCalcsVarsBounds = ([epsilonBounds[0], P_cBounds[0], A_tBounds[0]], [epsilonBounds[1], P_cBounds[1], A_tBounds[1]])
 
 
 
-def calculations():
+def calcs():
     #Throat Temperature
     T_t = T_s * (1 + ((gamma - 1) / 2)) ** -1
 
     #Throat Sonic Velocity
     c_t = np.sqrt(gamma * R_s * T_t)
 
-    #Using Scipy's least_squares method to solve recursive calculations
-    results = least_squares(recursiveCalculations, recursiveCalculationsVars, args=(T_t), bounds=recursiveCalculationsVarsBounds)
-    epsilon, P_c, A_t = results
-
     #Mach Exit Number
     Ma_e = np.sqrt((2 / (gamma - 1)) * ((P_c / P_e) ** ((gamma - 1) / gamma) - 1))
 
 
 
-def recursiveCalculations(recursiveCalculationsVars, T_t):
-    epsilon, P_c, A_t = recursiveCalculationsVars
+def rCalcs(rCalcsVars, T_t):
+    epsilon, P_c, A_t = rCalcsVars
 
     #Throat Area
     A_t = A_e / epsilon
@@ -74,4 +72,9 @@ def recursiveCalculations(recursiveCalculationsVars, T_t):
 
     return [epsilon, P_c, A_t]
 
-calculations()
+def rCalcsOptimization():
+    #Using Scipy's least_squares method to solve recursive calculations
+    results = least_squares(rCalcs, rCalcsVars, args=(T_t,), bounds=rCalcsVarsBounds)
+    epsilon, P_c, A_t = results.x
+
+calcs()
