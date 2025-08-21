@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.optimize import least_squares
 
 #Input Variables
 M = 30          #Molar Mass of Exhaust Gasses   (Kg/kmol)
@@ -15,6 +16,8 @@ A_e = 0.004418  #Exit Area                      (m^2)
 
 P_a = 15        #Ambient Pressure               (Pa)
 
+
+
 #Preliminary Calculations
 R_s = 8.31446261815324 / M  #Specific Gas Constant
 
@@ -23,6 +26,25 @@ mdot = m_p / dt             #Mass Flow Rate
 T_s = T_c                   #Stagnation Temperature
 
 P_e = P_a                   #Exit Pressure
+
+
+
+#Initial Recursive Variables Guesses
+epsilon = 5            #Area Ratio Initial Guess
+Ma_e = 3               #Exit Mach Number Initial Guess
+P_c = 700              #Chamber Pressure Initial Guess     (Pa)
+A_t = 0.0008836        #Exit Area Initial Guess            (m^2)
+recursiveCalculationsVars = [epsilon, Ma_e, P_c, A_t]
+
+#least_squares bounds
+#Variable     low <= x <= high
+epsilonBounds   = [0, 15]
+Ma_eBounds      = [1, 10]
+P_cBounds       = [0, 1000]
+A_tBounds       = [0, A_e]
+recursiveCalculationsVarsBounds = [epsilonBounds, Ma_eBounds, P_cBounds, A_tBounds]
+
+
 
 def calculations():
     #Specific Gas Constant
@@ -36,6 +58,9 @@ def calculations():
 
     #Throat Sonic Velocity
     c_t = np.sqrt(gamma * R_s * T_t)
+
+    #Using Scipy's least_squares method to solve recursive calculations
+    least_squares(recursiveCalculations, recursiveCalculationsVars, bounds=recursiveCalculationsVarsBounds)
 
 
 
@@ -51,6 +76,3 @@ def recursiveCalculations():
 
     #Area Ratio
     epsilon = ((gamma + 1) / 2) ** (1 / (gamma - 1)) * (P_e / P_c) ** (1 / gamma) * np.sqrt(((gamma + 1) / (gamma - 1)) * (1 - (P_e / P_c) ** ((gamma - 1) / gamma)))
-
-#Initial Recursive Variables Guesses
-epsilonGuess = 5
