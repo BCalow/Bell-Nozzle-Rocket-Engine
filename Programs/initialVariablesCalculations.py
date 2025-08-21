@@ -2,7 +2,7 @@ import numpy as np
 from scipy.optimize import least_squares
 
 #Input Variables
-M = 30          #Molar Mass of Exhaust Gasses   (Kg/kmol)
+M = 0.03          #Molar Mass of Exhaust Gasses   (Kg/kmol)
 
 m_p = 30        #Available Propellent Mass      (Kg)
 
@@ -31,28 +31,20 @@ P_e = P_a                   #Exit Pressure
 
 #Initial Recursive Variables Guesses
 epsilon = 5            #Area Ratio Initial Guess
-Ma_e = 3               #Exit Mach Number Initial Guess
 P_c = 700              #Chamber Pressure Initial Guess     (Pa)
 A_t = 0.0008836        #Exit Area Initial Guess            (m^2)
-recursiveCalculationsVars = [epsilon, Ma_e, P_c, A_t]
+recursiveCalculationsVars = [epsilon, P_c, A_t]
 
 #least_squares bounds
 #Variable     low <= x <= high
-epsilonBounds   = [0, 15]
-Ma_eBounds      = [1, 10]
-P_cBounds       = [0, 1000]
-A_tBounds       = [0, A_e]
-recursiveCalculationsVarsBounds = [epsilonBounds, Ma_eBounds, P_cBounds, A_tBounds]
+epsilonBounds   = [1, 15]
+P_cBounds       = [P_e, 1000]
+A_tBounds       = [A_e / 15, A_e]
+recursiveCalculationsVarsBounds = ([epsilonBounds[0], P_cBounds[0], A_tBounds[0]], [epsilonBounds[1], P_cBounds[1], A_tBounds[1]])
 
 
 
 def calculations():
-    #Specific Gas Constant
-    R_s = 8.31446261815324 / M
-
-    #Mass Flow Rate
-    mdot = m_p / dt
-
     #Throat Temperature
     T_t = T_s * (1 + ((gamma - 1) / 2)) ** -1
 
@@ -60,19 +52,26 @@ def calculations():
     c_t = np.sqrt(gamma * R_s * T_t)
 
     #Using Scipy's least_squares method to solve recursive calculations
-    least_squares(recursiveCalculations, recursiveCalculationsVars, bounds=recursiveCalculationsVarsBounds)
+    results = least_squares(recursiveCalculations, recursiveCalculationsVars, args=(T_t), bounds=recursiveCalculationsVarsBounds)
+    epsilon, P_c, A_t = results
+
+    #Mach Exit Number
+    Ma_e = np.sqrt((2 / (gamma - 1)) * ((P_c / P_e) ** ((gamma - 1) / gamma) - 1))
 
 
 
-def recursiveCalculations():
+def recursiveCalculations(recursiveCalculationsVars, T_t):
+    epsilon, P_c, A_t = recursiveCalculationsVars
+
     #Throat Area
     A_t = A_e / epsilon
 
     #Chamber Pressure
     P_c = ((mdot * np.sqrt(T_t)) / A_t) * np.sqrt(R_s / gamma) * ((gamma + 1) / 2) ** ((gamma + 1) * (2 * (gamma - 1)))
 
-    #Mach Exit Number
-    Ma_e = np.sqrt((2 / (gamma - 1)) * ((P_c / P_e) ** ((gamma - 1) / gamma) - 1))
-
     #Area Ratio
     epsilon = ((gamma + 1) / 2) ** (1 / (gamma - 1)) * (P_e / P_c) ** (1 / gamma) * np.sqrt(((gamma + 1) / (gamma - 1)) * (1 - (P_e / P_c) ** ((gamma - 1) / gamma)))
+
+    return [epsilon, P_c, A_t]
+
+calculations()
