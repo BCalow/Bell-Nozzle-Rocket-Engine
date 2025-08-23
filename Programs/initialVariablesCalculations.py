@@ -11,7 +11,7 @@ plt.style.use('dark_background')
 #Input Variables
 M = 0.03        #Molar Mass of Exhaust Gasses       (Kg/kmol)
 
-m_p = 30        #Available Propellent Mass          (Kg)
+m_p = 25        #Available Propellent Mass          (Kg)
 
 dt = 30         #Burn Time                          (S)
 
@@ -90,7 +90,7 @@ ax3 = ax1.twinx()
 ax3.plot(epsilon, A_t, color='white')
 
 ax4 = ax1.twinx()
-ax4.plot(epsilon, V_e, color='gray')
+ax4.plot(epsilon, V_e, color='blue')
 
 ax5 = ax1.twinx()
 ax5.plot(epsilon, F, color='yellow')
