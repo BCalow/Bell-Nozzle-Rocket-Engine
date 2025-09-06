@@ -15,6 +15,15 @@ class app(ctk.CTk):
         self.gamma = self.dataEntry(self, "Ratio of Specific Heats", "", 4)
         self.A_e = self.dataEntry(self, "Nozzle Exit Area", "m²", 5)
         self.P_a = self.dataEntry(self, "Ambient Pressure", "kPa", 6)
+        self.M.entry.configure(state="disabled", fg_color=("#151515", "#0C0C0C"), text_color=("#555555"), textvariable="")
+        self.M.name.configure(text_color=("#666666"))
+        self.M.unit.configure(text_color=("#666666"))
+        self.m_p = app.disableSection(self.m_p)
+
+    def disableSection(self):
+        self.entry.configure(state="disabled", fg_color=("#151515", "#0C0C0C"), text_color=("#555555"), textvariable="")
+        self.name.configure(text_color=("#666666"))
+        self.unit.configure(text_color=("#666666"))
 
     class dataEntry(ctk.CTkFrame):
         def __init__(self, master, name, unit, row):
